@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "elytraslotenchants",
+	"version": "${version}",
+	"name": "Élytre du slot, enchantements actifs",
+	"description": "Les enchantements d'une élytre portée dans le slot d'Elytra Slot comptent comme si elle était au torse (Mending, Protection, Graviole…).",
+	"authors": [
+		"nistroy"
+	],
+	"contact": {
+		"sources": "https://github.com/Nistroy/minecraft-elytra-slot-enchants",
+		"issues": "https://github.com/Nistroy/minecraft-elytra-slot-enchants/issues"
+	},
+	"license": "GPL-3.0-only",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.nistroy.elytraslotenchants.ElytraSlotEnchants"
+		]
+	},
+	"mixins": [
+		"elytraslotenchants.mixins.json"
+	],
+	"accessWidener": "elytraslotenchants.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*",
+		"trinkets": ">=3.10.0",
+		"elytraslot": "*"
+	}
+}
