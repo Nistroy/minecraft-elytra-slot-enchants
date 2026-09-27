@@ -1,0 +1,23 @@
+{
+	"description": "Lighter",
+	"supported_items": "minecraft:elytra",
+	"weight": 1,
+	"max_level": 1,
+	"min_cost": {"base": 1, "per_level_above_first": 0},
+	"max_cost": {"base": 1, "per_level_above_first": 0},
+	"anvil_cost": 1,
+	"slots": ["chest"],
+	"effects": {
+		"minecraft:location_changed": [
+			{
+				"effect": {
+					"type": "minecraft:attribute",
+					"id": "elytraslotenchants_test:lighter",
+					"attribute": "minecraft:generic.gravity",
+					"amount": -0.5,
+					"operation": "add_multiplied_total"
+				}
+			}
+		]
+	}
+}

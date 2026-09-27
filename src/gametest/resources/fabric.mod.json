@@ -1,0 +1,13 @@
+{
+	"schemaVersion": 1,
+	"id": "elytraslotenchants-test",
+	"version": "1.0.0",
+	"name": "Élytre du slot, enchantements actifs — tests",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-gametest": ["io.github.nistroy.elytraslotenchants.test.ElytraSlotEnchantsGameTest"]
+	},
+	"depends": {
+		"elytraslotenchants": "*"
+	}
+}
