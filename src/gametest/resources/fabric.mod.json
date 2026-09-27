@@ -5,7 +5,10 @@
 	"name": "Élytre du slot, enchantements actifs — tests",
 	"environment": "*",
 	"entrypoints": {
-		"fabric-gametest": ["io.github.nistroy.elytraslotenchants.test.ElytraSlotEnchantsGameTest"]
+		"fabric-gametest": [
+			"io.github.nistroy.elytraslotenchants.test.ElytraSlotEnchantsGameTest",
+			"io.github.nistroy.elytraslotenchants.test.SoulRechargeGameTest"
+		]
 	},
 	"depends": {
 		"elytraslotenchants": "*"

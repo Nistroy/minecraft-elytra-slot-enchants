@@ -3,7 +3,8 @@
 	"package": "io.github.nistroy.elytraslotenchants.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"EnchantmentHelperMixin"
+		"EnchantmentHelperMixin",
+		"ItemCooldownsMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

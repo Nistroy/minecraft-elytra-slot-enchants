@@ -3,7 +3,7 @@
 	"id": "elytraslotenchants",
 	"version": "${version}",
 	"name": "Élytre du slot, enchantements actifs",
-	"description": "Les enchantements d'une élytre portée dans le slot d'Elytra Slot comptent comme si elle était au torse (Mending, Protection, Graviole…).",
+	"description": "Les enchantements d'une élytre portée dans le slot d'Elytra Slot comptent comme si elle était au torse (Mending, Protection, Graviole…). Ajoute Recharge des âmes : boost de l'Élytre des âmes plus fréquent.",
 	"authors": [
 		"nistroy"
 	],
@@ -28,6 +28,7 @@
 		"java": ">=21",
 		"fabric-api": "*",
 		"trinkets": ">=3.10.0",
-		"elytraslot": "*"
+		"elytraslot": "*",
+		"deeperdarker": "*"
 	}
 }

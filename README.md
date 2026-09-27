@@ -12,7 +12,22 @@ Ce mod les fait compter comme si l'élytre était au torse.
   le mod ne les compte pas une deuxième fois.
 - Retirer l'élytre de l'emplacement coupe aussitôt l'effet de Graviole.
 
-Dépend de Trinkets `3.10.0` et d'Elytra Slot `9.0.1+1.21.1`.
+## Recharge des âmes
+
+Nouvel enchantement pour l'**Élytre des âmes** (Deeper and Darker) : le boost revient plus vite.
+
+| Niveau | Recharge du boost |
+| --- | --- |
+| sans | 30 s |
+| I | 22 s |
+| II | 15 s |
+| III | 8 s |
+
+- S'achète chez les bibliothécaires (livre de niveau I à III), pas à la table d'enchantement.
+- Livre I + livre I → II à l'enclume, II + II → III.
+- Marche au torse comme dans l'emplacement d'Elytra Slot.
+
+Dépend de Trinkets `3.10.0`, d'Elytra Slot `9.0.1+1.21.1` et de Deeper and Darker.
 
 ## Construire
 
