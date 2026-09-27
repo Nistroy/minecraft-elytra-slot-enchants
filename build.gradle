@@ -83,6 +83,19 @@ dependencies {
 	}
 }
 
+// owo-lib (Deeper and Darker) demande l'EULA sur l'entrée standard si eula.txt manque, avant l'acceptation
+// automatique de Loom : la CI part d'un dossier de lancement vide.
+tasks.named("runGameTest") {
+	def runDir = file(loom.runConfigs.gameTest.runDir)
+	doFirst {
+		def eula = new File(runDir, "eula.txt")
+		if (!eula.exists()) {
+			runDir.mkdirs()
+			eula.text = "eula=true\n"
+		}
+	}
+}
+
 processResources {
 	def version = project.version
 	inputs.property "version", version
