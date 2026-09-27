@@ -19,6 +19,24 @@ repositories {
 		}
 	}
 	maven {
+		// owo-lib : le POM Modrinth ne tire pas endec.
+		name = 'wispforest'
+		url = 'https://maven.wispforest.io/releases'
+		content {
+			includeGroup 'io.wispforest'
+			includeGroup 'io.wispforest.endec'
+			includeGroup 'blue.endless'
+		}
+	}
+	maven {
+		// Custom Portal API : embarquée dans le jar de Deeper and Darker, absente de Modrinth.
+		name = 'kyrptonaught'
+		url = 'https://maven.kyrptonaught.dev'
+		content {
+			includeGroup 'net.kyrptonaught'
+		}
+	}
+	maven {
 		name = 'Ladysnake'
 		url = 'https://maven.ladysnake.org/releases'
 		content {
@@ -52,6 +70,30 @@ dependencies {
 	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
 	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
 	modLocalRuntime "maven.modrinth:elytra-slot:${project.elytraslot_version}"
+	// Élytre des âmes pour les tests en jeu ; le mod ne la référence que par son id. Le chargeur ne lit pas
+	// les jars embarqués des dépendances de dev : Custom Portal API et owo-lib sont ajoutées à part.
+	modLocalRuntime "maven.modrinth:deeperdarker:${project.deeperdarker_version}"
+	modLocalRuntime("net.kyrptonaught:customportalapi:${project.customportalapi_version}") {
+		transitive = false
+	}
+	modLocalRuntime("io.wispforest:owo-lib:${project.owo_version}") {
+		// Versions du serveur (fabric-api 0.116.17) plutôt que celles, plus vieilles, du POM d'owo.
+		exclude group: 'net.fabricmc'
+		exclude group: 'net.fabricmc.fabric-api'
+	}
+}
+
+// owo-lib (Deeper and Darker) demande l'EULA sur l'entrée standard si eula.txt manque, avant l'acceptation
+// automatique de Loom : la CI part d'un dossier de lancement vide.
+tasks.named("runGameTest") {
+	def runDir = file(loom.runConfigs.gameTest.runDir)
+	doFirst {
+		def eula = new File(runDir, "eula.txt")
+		if (!eula.exists()) {
+			runDir.mkdirs()
+			eula.text = "eula=true\n"
+		}
+	}
 }
 
 processResources {

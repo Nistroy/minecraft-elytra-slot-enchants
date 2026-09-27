@@ -1,2 +1,3 @@
 accessWidener v2 named
 accessible class net/minecraft/world/item/enchantment/EnchantmentHelper$EnchantmentInSlotVisitor
+accessible field net/minecraft/world/item/ServerItemCooldowns player Lnet/minecraft/server/level/ServerPlayer;
